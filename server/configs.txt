@@ -1,0 +1,70 @@
+node.js
+
+// para rodar 
+  - npm run dev
+  - localhost:3333
+
+// cria um projeto java script
+npm init -y
+  - projeto package.json
+    - dependencias (bibliotecas de terceiros) que vai ter no projeto 
+
+npm i typescript -D
+  - dependencia que só vai ser utilizada em ambiente de desenvolvimento
+
+npm i @types/node -D
+  - habilidade para que o ts saiba que está no ambiente do node
+
+npx 
+  - entender binarios
+
+npx tsc --init
+  - cria o arquivo tsconfig.json
+  - mudar o :
+    "target": "es2020"
+    // versão do es script quero converter meu codigo
+
+typescript
+  - ferramenta que permite adicionar tipagem estática
+    - definir o formato, tipo de cada variável
+    - cada variável só pode ter o mesmo tipo 
+
+npm i tsx -D
+  - automatiza o processo de fazer a conversão de typescript para javascript
+
+fastify ( npm i fastify )
+  - framework que também é utilizado em produção
+
+api 
+  - precisa de um servidor http
+  - requisições get, post, etc 
+
+promise - js
+  - algo que pode demorar para executar
+
+eslint ( npm install eslint -D // npm i @rocketseat/eslint-config -D )
+  - padronização do projeto
+
+prisma ( npm i prisma -D )
+  - ferramenta para fazer alguns comandos
+  - flag ( npx prisma init --datasource-provider SQLite )
+    - to dizendo que vou usar o SQLite
+
+env
+  - variaveis ambientes
+  - varia de acordo com o ambiente que está rodando
+
+/// configurações
+      model User {
+        id String @id @default(uuid())
+        // @id vai falar pro prisma que essa é a package
+        // @default(uuid()) vai gerar uma id unica univeral
+      }
+
+npx prisma migrate dev 
+  - vai ler meu arquivo schema
+  - atualizar quando o schema for atualizado
+  - migration - sistema de versionamento do banco de dados
+    // cria de forma automatica no seu diretorio
+    ** npx prisma studio (graphic user interface)
+    **  npm i @prisma/client (para acessar o banco de dados na api)

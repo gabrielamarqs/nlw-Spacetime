@@ -1,0 +1,18 @@
+npx create-next-app@latest nextjs-blog --use-npm 
+	- primeiro passo
+
+tailwind 
+	- ferramenta de estilização
+	- atalho pro css
+	- feito com classes
+	- bom para produtividade
+
+npm i @rocketseat/eslint-config -D
+	- ambiente de desenvolvimento
+
+npm i prettier-plugin-tailwindcss -D 
+	- plugin
+	- 
+
+
+
