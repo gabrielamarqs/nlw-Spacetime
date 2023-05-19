@@ -1,0 +1,71 @@
+componentes
+  - são formas da gente separar a nossa interface em vários pedacinhos menores
+  - funções que retornam html
+
+  - separar nossa aplicação em pedacinhos menores para que o código fique de mais simples manutenção
+  - reaproveitar comportamento e visual em vários locais da aplicação
+
+TSX
+  - typescript + JSX = TSX
+
+JSX 
+  - javascript + XML = JSX
+
+chaves
+  - permitem que coloquemos variaveis javascript no html
+
+
+
+propriedades
+  - forma de passar informações dentro de um componente
+
+
+roteamento
+  -  todo arquivo que se chamar page e estiver dentro do app vira uma rota da aplicação
+  - tem que estar dentro de uma pasta
+  - gera as rotas automaticamente
+
+
+  prettier-plugin-tailwind 
+
+fontes
+  - next importa a fonte e cria uma variável no css
+
+// time stamp aula 2 
+23:32
+
+// leading-snug
+  highlight um pouco menor 
+
+// space-y-[??]
+  para espaçar igualmente
+
+// y é na vertical, x horizontal
+
+// font 
+layout.tsx 
+  - para configurar as fontes do google, da pra importar direto nesse arquivo
+  ** import { Roboto_Flex, Bai_Jamjuree } from 'next/font/google' **
+
+// coloridos
+color highlight
+
+// pacote de ícones
+npm i lucide-react
+
+// Image do Next em vez de usar a tag img 
+  o next otimiza a imagem de forma automárica (reduz tamanho, deixa mais leve)
+  ** import Image from 'next/image' **
+
+// para deixar as fontes mais magrinhas
+  no arquivo 
+    globais.css
+    body {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      // deixa as fontes mais sharp (de acordo com o Diego)
+    }
+
+
+
+
