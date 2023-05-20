@@ -68,3 +68,14 @@ npx prisma migrate dev
     // cria de forma automatica no seu diretorio
     ** npx prisma studio (graphic user interface)
     **  npm i @prisma/client (para acessar o banco de dados na api)
+
+npx prisma migrate reset
+  - dropa o banco de dados
+
+npm i zod
+  - faz a validação do id
+
+npm i @fastify/cors
+  - uma tecnica de segurança
+  - para determinar quais apis podem ter accessors
+  - temos que instruir quuais urls de front-end podem acessar o nosso back end
