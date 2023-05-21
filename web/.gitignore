@@ -33,3 +33,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# arquivos de anotação
+aula3.txt
+configs.txt
+configss.txt
+Screenshot from 2023-05-20 20-42-52.png

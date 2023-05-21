@@ -74,6 +74,7 @@ npx prisma migrate reset
 
 npm i zod
   - faz a validação do id
+  - faz validações no geral
 
 npm i @fastify/cors
   - uma tecnica de segurança
