@@ -5,8 +5,19 @@ import jwt from '@fastify/jwt'
 import { memoriesRoutes } from './routes/memories'
 import 'dotenv/config'
 import { authRoutes } from './routes/auth'
+import multipart from '@fastify/multipart'
+import { uploadRoutes } from './routes/upload'
+import { resolve } from 'path'
 
 const app = fastify()
+
+app.register(multipart)
+
+app.register(require('@fastify/static'), {
+  root: resolve(__dirname, '../uploads'),
+  // em qual pasta vão estar os arquivo que queremos que sejam esáticos
+  prefix: '/uploads',
+})
 
 app.register(cors, {
   origin: true, // todas URLs de front-end poderão acessar nosso back-end
@@ -23,6 +34,7 @@ app.register(jwt, {
 app.register(authRoutes)
 app.register(memoriesRoutes)
 // serve para registrar um arquivo de rotas separado
+app.register(uploadRoutes)
 
 app
   .listen({

@@ -11,11 +11,15 @@ export async function GET(request: NextRequest) {
     // retorna o token
   })
 
+  const redirectTo = request.cookies.get('redirectTo')?.value
+
   const { token } = registerResponse.data
 
   console.log(token)
 
-  const redirectUrl = new URL('/', request.url)
+  const redirectUrl = redirectTo ?? new URL('/', request.url)
+  // se existir redirectTo eu mando pra essa página, se não mando pra root
+
   // vai redirecionar pra rota root da minha aplicação
 
   const cookieExpireInSeconds = 60 * 60 * 24 * 30
