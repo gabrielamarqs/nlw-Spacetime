@@ -13,14 +13,14 @@ export async function uploadRoutes(app: FastifyInstance) {
     const upload = await request.file({
       // limits - permite configurar o tamanho do arquivo que eu quero permitir
       limits: {
-        fileSize: 5_242_8800, // 5mb
+        fileSize: 5_242_880, // 5mb
       },
     })
     if (!upload) {
       return reply.status(400).send
     }
 
-    const mimeTypeRegex = /^(iamge|video)\/[a-zA-Z]+/
+    const mimeTypeRegex = /^(image|video)\/[a-zA-Z]+/
     // mimetype => categorização global de tipos de arquivo
     const isValidFileFormat = mimeTypeRegex.test(upload.mimetype)
 
@@ -37,7 +37,7 @@ export async function uploadRoutes(app: FastifyInstance) {
     // streaming
     // não preciso carregar todo o arquivo de uma vez
     const writeStream = createWriteStream(
-      resolve(__dirname, '../../uploads/', fileName),
+      resolve(__dirname, '..', '..', 'uploads', fileName),
       // __dirname => vai retornar qual o diretorio que este aquivo upload.ts está
 
       // vai padronizar os caminhos para que todos os sistemas operacionais entendam
@@ -47,7 +47,7 @@ export async function uploadRoutes(app: FastifyInstance) {
     const fullUrl = request.protocol.concat('://').concat(request.hostname)
     // request.protocol = https
     // hostname=> localhost o dominio da nossa aplicação
-    const fileUrl = new URL(`/uploads/${fileName}`, fullUrl).toString
+    const fileUrl = new URL(`/uploads/${fileName}`, fullUrl).toString()
 
     return { fileUrl }
   })
